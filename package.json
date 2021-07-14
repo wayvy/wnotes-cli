@@ -1,0 +1,33 @@
+{
+  "name": "wnotes-cli",
+  "version": "0.0.1",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/wayvy/wnotes-cli",
+  "author": "Sergey Gromov <sendtogromov@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "wnotes": "./build/wnotes-cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsnd --respawn ./src/wnotes-cli.ts",
+    "ts-check": "tsc --skipLibCheck --noEmit --project tsconfig.json",
+    "lint-fix": "eslint src --fix",
+    "codestyle-fix": "prettier src --write \"*.{ts,js}?(x)\"",
+    "precommit": "yarn ts-check && yarn lint-fix && yarn codestyle-fix"
+  },
+  "devDependencies": {
+    "@types/node": "^16.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-module-utils": "^2.6.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  }
+}
